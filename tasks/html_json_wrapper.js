@@ -1,6 +1,6 @@
 /*
  * grunt-markdown-json-wrapper
- * https://github.com/paul/markdown-json-wrapper
+ * https://github.com/paulwittmann/markdown-json-wrapper
  *
  * Copyright (c) 2013 Paul Wittmann
  * Licensed under the MIT license.
@@ -13,7 +13,7 @@ module.exports = function(grunt) {
   // Please see the Grunt documentation for more information regarding task
   // creation: http://gruntjs.com/creating-tasks
 
-  grunt.registerMultiTask('markdown_json_wrapper', 'Your task description goes here.', function() {
+  grunt.registerMultiTask('markdown_json_wrapper', 'Wraps several HTML files in JSON, and concatenates a bunch of markdown files.', function() {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
       punctuation: '.',

@@ -1,6 +1,6 @@
 /*
- * grunt-markdown-json-wrapper
- * https://github.com/paul/markdown-json-wrapper
+ * grunt-html-json-wrapper
+ * https://github.com/paul/html-json-wrapper
  *
  * Copyright (c) 2013 Paul Wittmann
  * Licensed under the MIT license.
@@ -29,7 +29,7 @@ module.exports = function(grunt) {
     },
 
     // Configuration to be run (and then tested).
-    markdown_json_wrapper: {
+    html_json_wrapper: {
       default_options: {
         options: {
         },
@@ -65,7 +65,7 @@ module.exports = function(grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'markdown_json_wrapper', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'html_json_wrapper', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test']);

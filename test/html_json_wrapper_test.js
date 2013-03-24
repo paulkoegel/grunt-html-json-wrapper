@@ -22,7 +22,7 @@ var grunt = require('grunt');
     test.ifError(value)
 */
 
-exports.markdown_json_wrapper = {
+exports.html_json_wrapper = {
   setUp: function(done) {
     // setup here if necessary
     done();

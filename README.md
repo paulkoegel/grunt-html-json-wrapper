@@ -1,4 +1,4 @@
-# grunt-markdown-json-wrapper
+# grunt-html-json-wrapper
 
 > The best Grunt plugin ever.
 
@@ -8,23 +8,23 @@ This plugin requires Grunt `~0.4.1`
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install grunt-markdown-json-wrapper --save-dev
+npm install grunt-html-json-wrapper --save-dev
 ```
 
 One the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-markdown-json-wrapper');
+grunt.loadNpmTasks('grunt-html-json-wrapper');
 ```
 
-## The "markdown_json_wrapper" task
+## The "html_json_wrapper" task
 
 ### Overview
-In your project's Gruntfile, add a section named `markdown_json_wrapper` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `html_json_wrapper` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
-  markdown_json_wrapper: {
+  html_json_wrapper: {
     options: {
       // Task-specific options go here.
     },
@@ -56,7 +56,7 @@ In this example, the default options are used to do something with whatever. So 
 
 ```js
 grunt.initConfig({
-  markdown_json_wrapper: {
+  html_json_wrapper: {
     options: {},
     files: {
       'dest/default_options': ['src/testing', 'src/123'],
@@ -70,7 +70,7 @@ In this example, custom options are used to do something else with whatever else
 
 ```js
 grunt.initConfig({
-  markdown_json_wrapper: {
+  html_json_wrapper: {
     options: {
       separator: ': ',
       punctuation: ' !!!',
