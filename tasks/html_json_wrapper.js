@@ -1,6 +1,6 @@
 /*
- * grunt-markdown-json-wrapper
- * https://github.com/paulwittmann/markdown-json-wrapper
+ * grunt-html-json-wrapper
+ * https://github.com/paulwittmann/html-json-wrapper
  *
  * Copyright (c) 2013 Paul Wittmann
  * Licensed under the MIT license.
@@ -13,11 +13,13 @@ module.exports = function(grunt) {
   // Please see the Grunt documentation for more information regarding task
   // creation: http://gruntjs.com/creating-tasks
 
-  grunt.registerMultiTask('markdown_json_wrapper', 'Wraps several HTML files in JSON, and concatenates a bunch of markdown files.', function() {
+  grunt.registerMultiTask('html_json_wrapper', 'Wraps several HTML files in JSON.', function() {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
-      punctuation: '.',
-      separator: ', '
+      //punctuation: '.',
+      separator: ',',
+      prefix: '[',
+      suffix: ']\n'
     });
 
     // Iterate over all specified file groups.
@@ -33,11 +35,16 @@ module.exports = function(grunt) {
         }
       }).map(function(filepath) {
         // Read file source.
-        return grunt.file.read(filepath);
+        var file = grunt.file.read(filepath).replace(/(\r\n|\n|\r)/gm, ''),
+            result = { 'html': file };
+        console.log(JSON.stringify(result));
+        return JSON.stringify(result);
       }).join(grunt.util.normalizelf(options.separator));
+      src
 
       // Handle options.
-      src += options.punctuation;
+      // src += options.punctuation;
+      src = options.prefix + src + options.suffix;
 
       // Write the destination file.
       grunt.file.write(f.dest, src);
