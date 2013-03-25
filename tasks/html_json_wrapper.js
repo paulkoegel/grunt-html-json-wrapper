@@ -37,10 +37,8 @@ module.exports = function(grunt) {
         // Read file source.
         var file = grunt.file.read(filepath).replace(/(\r\n|\n|\r)/gm, ''),
             result = { 'html': file };
-        console.log(JSON.stringify(result));
         return JSON.stringify(result);
       }).join(grunt.util.normalizelf(options.separator));
-      src
 
       // Handle options.
       // src += options.punctuation;

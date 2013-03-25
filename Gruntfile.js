@@ -36,7 +36,7 @@ module.exports = function(grunt) {
         files: {
           'tmp/default_options': ['test/fixtures/project_a.html', 'test/fixtures/project_b.html'],
         },
-      },
+      }
       // custom_options: {
       //   options: {
       //     separator: ': ',
