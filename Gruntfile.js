@@ -1,6 +1,6 @@
 /*
  * grunt-html-json-wrapper
- * https://github.com/paul/html-json-wrapper
+ * https://github.com/paulwittmann/grunt-html-json-wrapper
  *
  * Copyright (c) 2013 Paul Wittmann
  * Licensed under the MIT license.
