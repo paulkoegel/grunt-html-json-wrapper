@@ -39,7 +39,13 @@ module.exports = function(grunt) {
 
         metaFilePath = filePath.replace('.html', '.json');
         if (grunt.file.exists(metaFilePath)) {
-          metaData = grunt.file.readJSON(metaFilePath);
+          try {
+            metaData = grunt.file.readJSON(metaFilePath);
+          } catch (exception) {
+            console.log('WARNING: The following error occurred when trying to parse the .json file: ', exception);
+            console.log('Usually no need to worry, this can be caused by an empty .json file. Continuing with empty meta data.');
+            metaData = {};
+          }
         }
         file = grunt.file.read(filePath).replace(/(\r\n|\n|\r)/gm, '').split('<hr>').map(function(slideBody) {
           return {"body": slideBody};
