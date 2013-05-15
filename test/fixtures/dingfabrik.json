@@ -1,0 +1,19 @@
+{
+  "sort_order": 3,
+  "title": "dingfabrik",
+  "date": "2012-05-13 18:30",
+  "categories": ["projects"],
+  "tags": ["community", "fablab", "hackerspace", "3d printer", "makerbot", "lasercutter", "hacker", "hacking"],
+  "published":  true,
+  "slides": [
+    { "slide": ["01", "03"],
+      "style": "style01"
+    },{
+      "slide": "02",
+      "style": "style02"
+    },{
+      "slide": "04",
+      "style": "style03"
+    }
+  ]
+}

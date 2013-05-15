@@ -33,11 +33,21 @@ module.exports = function(grunt) {
         } else {
           return true;
         }
-      }).map(function(filepath) {
+      }).map(function(filePath) {
         // Read file source.
-        var file = grunt.file.read(filepath).replace(/(\r\n|\n|\r)/gm, ''),
-            result = { 'html': file };
-        return JSON.stringify(result);
+        var metaFilePath, metaData, yamlFile, file, result;
+
+        metaFilePath = filePath.replace('.html', '.json');
+        if (grunt.file.exists(metaFilePath)) {
+          metaData = grunt.file.readJSON(metaFilePath);
+        }
+        file = grunt.file.read(filePath).replace(/(\r\n|\n|\r)/gm, '').split('<hr>').map(function(slideBody) {
+          return {"body": slideBody};
+        });
+        result = metaData || {};
+        result.slides = file;
+
+        return JSON.stringify(result, null, 2); // pretty print it
       }).join(grunt.util.normalizelf(options.separator));
 
       // Handle options.
