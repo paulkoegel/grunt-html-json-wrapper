@@ -1,5 +1,7 @@
 # grunt-html-json-wrapper
 
+Publish to plugin list with: `npm publish`
+
 > The best Grunt plugin ever.
 
 ## Getting Started
