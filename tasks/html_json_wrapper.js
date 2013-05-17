@@ -35,7 +35,7 @@ module.exports = function(grunt) {
         }
       }).map(function(filePath) {
         // Read file source.
-        var metaFilePath, metaData, yamlFile, file, result;
+        var metaFilePath, metaData = {}, yamlFile, file, result;
 
         metaFilePath = filePath.replace('.html', '.json');
         if (grunt.file.exists(metaFilePath)) {
@@ -47,8 +47,12 @@ module.exports = function(grunt) {
             metaData = {};
           }
         }
-        file = grunt.file.read(filePath).replace(/(\r\n|\n|\r)/gm, '').split('<hr>').map(function(slideBody) {
-          return {"body": slideBody};
+        file = grunt.file.read(filePath).replace(/(\r\n|\n|\r)/gm, '').split('<hr>').map(function(slideBody, index) {
+          var returnValue = {"body": slideBody};
+          if (metaData.slides && metaData.slides[index]) {
+            returnValue.style = metaData.slides[index].style;
+          }
+          return returnValue;
         });
         result = metaData || {};
         result.slides = file;
